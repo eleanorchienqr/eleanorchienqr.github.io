@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Sans SC:300,300italic,400,400italic,700,700italic|Josefin Sans:300,300italic,400,400italic,700,700italic|Monda:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"eleanorchienqr.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":280,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="本篇文章是对博客搭建中需要使用到的工具与搭建过程进行总结与记录。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博客搭建及Markdown语法">
+<meta property="og:url" content="https://eleanorchienqr.github.io/2020/04/18/2020-4-20-MarkdownGrammer/index.html">
+<meta property="og:site_name" content="Live &amp; Love">
+<meta property="og:description" content="本篇文章是对博客搭建中需要使用到的工具与搭建过程进行总结与记录。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1ge4pyfvw0sj31ph0u0gne.jpg">
+<meta property="article:published_time" content="2020-04-18T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-11T10:59:07.166Z">
+<meta property="article:author" content="Yolili">
+<meta property="article:tag" content="Markdown">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1ge4pyfvw0sj31ph0u0gne.jpg">
+
+<link rel="canonical" href="https://eleanorchienqr.github.io/2020/04/18/2020-4-20-MarkdownGrammer/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en-US'
+  };
+</script>
+
+  <title>博客搭建及Markdown语法 | Live & Love</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Live & Love" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="تشغيل شريط التصفح">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Live & Love</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>معلومات</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>الوسوم</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>التصنيفات</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>الأرشيفات</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>بحث
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="بحث..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en-US">
+    <link itemprop="mainEntityOfPage" href="https://eleanorchienqr.github.io/2020/04/18/2020-4-20-MarkdownGrammer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Yolili">
+      <meta itemprop="description" content="桥上的人来来往往。但是毫无疑问，许多人走到桥中间的时候，心会小幅度摇摆。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Live & Love">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          博客搭建及Markdown语法
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">نُشر في</span>
+
+              <time title="أُنشأ: 2020-04-18 00:00:00" itemprop="dateCreated datePublished" datetime="2020-04-18T00:00:00Z">2020-04-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">عُدل في</span>
+                <time title="عُدل: 2021-03-11 10:59:07" itemprop="dateModified" datetime="2021-03-11T10:59:07Z">2021-03-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">في</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer/" itemprop="url" rel="index"><span itemprop="name">Computer</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="مشاهدات" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">مشاهدات: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/04/18/2020-4-20-MarkdownGrammer/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/18/2020-4-20-MarkdownGrammer/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="عدد الحروف في المقال">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">عدد الحروف في المقال: </span>
+              <span>3.4k</span>
+            </span>
+            <span class="post-meta-item" title="زمن القراءة">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">زمن القراءة &asymp;</span>
+              <span>3 دقائق.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本篇文章是对博客搭建中需要使用到的工具与搭建过程进行总结与记录。<br><span id="more"></span></p>
+<h1 id="Hexo搭建博客优秀案例学习"><a href="#Hexo搭建博客优秀案例学习" class="headerlink" title="Hexo搭建博客优秀案例学习"></a><strong><a target="_blank" rel="noopener" href="http://tding.top/archives/aad98408.html">Hexo搭建博客优秀案例学习</a></strong></h1><h2 id="Mac-Github配置"><a href="#Mac-Github配置" class="headerlink" title="Mac Github配置"></a><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/7edb6b838a2e">Mac Github配置</a></h2><h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>首先查看电脑是否安装Git，若没有安装，选择通过homebrew/Xcode安装。</p>
+<h3 id="创建ssh-key、配置git"><a href="#创建ssh-key、配置git" class="headerlink" title="创建ssh key、配置git"></a>创建ssh key、配置git</h3><ol>
+<li><p>设置username和email（github每次commit都会记录他们）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;wenbo&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;1050794513@qq.com&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过终端命令创建ssh key</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;1050794513@qq.com&quot;</span></span><br></pre></td></tr></table></figure>
+<p>没有创建过的，会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在~/下生成.ssh文件夹，进去，打开<code>id_rsa.pub</code>，复制里面的key。终端查看<code>.ssh/id_rsa.pub</code>文件:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat .ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>登录GitHub（默认你已经注册了GitHub账号），添加ssh key。</p>
+</li>
+<li>链接验证<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com </span><br></pre></td></tr></table></figure>
+终端输出结果<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Last login: Sat Jan  6 14:42:55 on ttys000</span><br><span class="line">WMBdeMacBook-Pro:~ WENBO$ ssh -T git@github.com </span><br><span class="line">Hi wenmobo! You<span class="string">&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span></span><br><span class="line"><span class="string">WMBdeMacBook-Pro:~ WENBO$ </span></span><br></pre></td></tr></table></figure>
+说明已经链接成功。</li>
+</ol>
+<h3 id="提交本地项目到-Github"><a href="#提交本地项目到-Github" class="headerlink" title="提交本地项目到 Github"></a>提交本地项目到 Github</h3><ol>
+<li><p>Clone工程到本地，首先复制ssh 地址<br>打开终端，这里只是测试，我想把工程克隆在桌面，首先在终端中切换路径到桌面，输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /Users/WENBO/Desktop/</span><br></pre></td></tr></table></figure>
+<p>然后克隆项目,终端输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:wenmobo/LearnGit.git</span><br></pre></td></tr></table></figure>
+<p><code>git@github.com:wenmobo/LearnGit.git</code>是刚刚复制的ssh路径。<br>终端完整输出如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Last login: Sat Jan  6 15:17:17 on ttys000</span><br><span class="line">WMBdeMacBook-Pro:~ WENBO$ <span class="built_in">cd</span> /Users/WENBO/Desktop/</span><br><span class="line">WMBdeMacBook-Pro:Desktop WENBO$ git <span class="built_in">clone</span> git@github.com:wenmobo/LearnGit.git</span><br><span class="line">Cloning into <span class="string">&#x27;LearnGit&#x27;</span>...</span><br><span class="line">remote: Counting objects: 5, <span class="keyword">done</span>.</span><br><span class="line">remote: Compressing objects: 100% (4/4), <span class="keyword">done</span>.</span><br><span class="line">remote: Total 5 (delta 0), reused 0 (delta 0), pack-reused 0</span><br><span class="line">Receiving objects: 100% (5/5), 5.2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>提交修改，首先切换到LearnGit文件路径：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /Users/WENBO/Desktop/LearnGit </span><br></pre></td></tr></table></figure>
+<p>然后输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//文件添加到仓库（.代表提交所有文件）</span><br><span class="line">git add .</span><br><span class="line">//把文件提交到仓库</span><br><span class="line">git commit -m <span class="string">&quot;First Commit&quot;</span></span><br><span class="line">//上传到github</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/176b7d686411"><strong>安装Node.js和npm</strong></a></p>
+<h3 id="Mac安装Hexo的失败问题"><a href="#Mac安装Hexo的失败问题" class="headerlink" title="Mac安装Hexo的失败问题"></a>Mac安装Hexo的失败问题</h3><p>可以执行下面命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install --unsafe-perm --verbose -g hexo</span><br></pre></td></tr></table></figure><br>然后，就可以<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo version</span><br></pre></td></tr></table></figure><br>成功看到版本号，安装成功！</p>
+<h3 id="Hexo与Node-js版本兼容问题"><a href="#Hexo与Node-js版本兼容问题" class="headerlink" title="Hexo与Node.js版本兼容问题"></a>Hexo与Node.js版本兼容问题</h3><p>目前Hexo支持Node的13版本，Node版本管理参见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Fabulous1111/article/details/84983869">Node快速切换版本、版本回退(降级)、版本更新(升级)</a></p>
+<h2 id="Hexo-Next主题美化"><a href="#Hexo-Next主题美化" class="headerlink" title="Hexo-Next主题美化"></a>Hexo-Next主题美化</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/cowry5/article/details/80310052">GitHub Pages自定义域名如何支持https</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Louis_li51/article/details/105227430">NexT7主题添加背景图片</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://yashuning.github.io/2018/06/29/hexo-Next-%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/">Hexo - Next 主题添加评论功能</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://yashuning.github.io/2018/06/29/hexo-Next-%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/">Hexo - Next 主题添加搜索功能</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.dazhuanlan.com/2019/12/18/5df97c1643a2b/">Hexo - Next 主题中渲染 MathJax 数学公式</a></p>
+</li>
+</ul>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://hasaik.com/posts/c7631ec1.html">Hexo博客+Next主题Note标签的使用</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://zhouhuix.cn/2016/11/24/%E4%BF%AE%E6%94%B9Hexo%E7%9A%84Next%E4%B8%BB%E9%A2%98/">修改Hexo的Next主题</a></p>
+</li>
+</ul>
+<h2 id="Hexo-Next主题中的内置标签使用的官方文档"><a href="#Hexo-Next主题中的内置标签使用的官方文档" class="headerlink" title="Hexo+Next主题中的内置标签使用的官方文档"></a>Hexo+Next主题中的内置标签使用的官方文档</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/tag-plugins">标签插件（Tag Plugins）</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://theme-next.iissnan.com/tag-plugins.html">内置标签</a></p>
+</li>
+</ul>
+<h1 id="Markdown-Syntax"><a href="#Markdown-Syntax" class="headerlink" title="Markdown Syntax"></a>Markdown Syntax</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014061630/article/details/81359144#28-%E8%A1%A8%E6%A0%BC">Markdown语法图文全面详解</a></p>
+<h2 id="字体设置：斜体、粗体、删除线、下划线"><a href="#字体设置：斜体、粗体、删除线、下划线" class="headerlink" title="字体设置：斜体、粗体、删除线、下划线"></a>字体设置：斜体、粗体、删除线、下划线</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">*这里是文字*</th>
+<th style="text-align:center"><em>这里是文字</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">_这里是文字_</td>
+<td style="text-align:center"><em>这里是文字</em></td>
+</tr>
+<tr>
+<td style="text-align:center">**这里是文字**</td>
+<td style="text-align:center"><strong>这里是文字</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">***这里是文字***</td>
+<td style="text-align:center"><strong><em>这里是文字</em></strong></td>
+</tr>
+<tr>
+<td style="text-align:center">~~这里是文字~~</td>
+<td style="text-align:center"><del>这里是文字</del></td>
+</tr>
+<tr>
+<td style="text-align:center"><u\> 这里是文字&lt;/u></td>
+<td style="text-align:center"><u> 这里是文字</u> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="利用iPic插入互联网图片、分割线与代码块"><a href="#利用iPic插入互联网图片、分割线与代码块" class="headerlink" title="利用iPic插入互联网图片、分割线与代码块"></a>利用iPic插入互联网图片、分割线与代码块</h2><p><strong>![图片描述](图片网络途径)</strong></p>
+<p><strong>插入程序代码的方式有两种，一种是利用缩进(tab)，另一种是利用英文“`”符号（一般在ESC键下方，和~同一个键）包裹代码。</strong></p>
+<ol>
+<li><p>代码块：缩进4个空格或是1个制表符。</p>
+</li>
+<li><p>行内式：如果在一个行内需要引用代码，只要用反引号`引起来就好（一般在ESC键下方，和~同一个键）。</p>
+</li>
+<li><p>多行代码块与语法高亮：在需要高亮的代码块的前一行及后一行使用三个单反引号包裹，就可以了。</p>
+</li>
+<li><p>代码块里面包含html代码。在代码区块里面，&amp;、&lt; 和 &gt; 会自动转成 HTML实体，这样的方式让你非常容易使用Markdown插入范例用的HTML 原始码，只需要复制贴上，剩下的 Markdown 都会帮你处理。</p>
+</li>
+</ol>
+<h2 id="字体、字号与颜色"><a href="#字体、字号与颜色" class="headerlink" title="字体、字号与颜色"></a>字体、字号与颜色</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字体代码</th>
+<th style="text-align:center">字体实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><font color="#4682B4" \> #4682B4 &lt;/font></td>
+<td style="text-align:center"><font color="#4682B4" > #4682B4 </font></td>
+</tr>
+<tr>
+<td style="text-align:center"><font color="#5f9ea0" \> #5f9ea0 &lt;/font></td>
+<td style="text-align:center"><font color="#5f9ea0" > #5f9ea0 </font></td>
+</tr>
+<tr>
+<td style="text-align:center"><font color="#ff69b4" \> #ff69b4 &lt;/font></td>
+<td style="text-align:center"><font color="#ff69b4" > #ff69b4 </font></td>
+</tr>
+<tr>
+<td style="text-align:center"><font color="#c71585" \> #c71585 &lt;/font></td>
+<td style="text-align:center"><font color="#c71585" > #c71585 </font></td>
+</tr>
+<tr>
+<td style="text-align:center"><font color="#b22222" \> #b22222 &lt;/font></td>
+<td style="text-align:center"><font color="#b22222" > #b22222 </font></td>
+</tr>
+<tr>
+<td style="text-align:center"><font color="#0099ff" size= "3" face="songti" \> #0099ff &lt;/font></td>
+<td style="text-align:center"><font color="#0099ff" size="3" face="songti" > #0099ff </font></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="数学公式编号"><a href="#数学公式编号" class="headerlink" title="数学公式编号"></a>数学公式编号</h2><p>LaTex的数学公式有两种：行中公式和独立公式。行中公式放在文中与其它文字混编，独立公式单独成行。</p>
+<ol>
+<li>行中公式可以用如下方法表示：</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ 数学公式 $</span><br></pre></td></tr></table></figure>
+<ol>
+<li>独立公式可以用如下方法表示：</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$ </span><br><span class="line">数学公式 </span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<ol>
+<li>自动编号的公式可以用如下方法表示：</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;equation&#125;</span><br><span class="line">数学公式</span><br><span class="line">\label&#123;eq:当前公式名&#125;</span><br><span class="line">\end&#123;equation&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>自动编号后的公式可在全文任意处使用 <code>\eqref&#123;eq:公式名&#125;</code>语句引用。</li>
+</ul>
+<h2 id="Markdown绘图插件Mermaid语法"><a href="#Markdown绘图插件Mermaid语法" class="headerlink" title="Markdown绘图插件Mermaid语法"></a>Markdown绘图插件Mermaid语法</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://mermaid-js.github.io/mermaid/#/">Mermaid官方使用手册</a></li>
+</ul>
+<h1 id="Jekyll-Grammer"><a href="#Jekyll-Grammer" class="headerlink" title="Jekyll Grammer"></a>Jekyll Grammer</h1><h2 id="为博客页面添加音乐插件"><a href="#为博客页面添加音乐插件" class="headerlink" title="为博客页面添加音乐插件"></a>为博客页面添加音乐插件</h2><p>网易云音乐里每首歌都支持生成外链播放器（除了有些版权保护），具体方法是登入网页版的网易云音乐，在右上角搜索框搜索想要的曲目，这里以Call You Mine Cover by blueD为例。在歌曲的网易云音乐界面点击“生成外链接播放器”。<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ge4pyfvw0sj31ph0u0gne.jpg" alt=""><br>将下列代码插入<code>post.html</code>中恰当的位置：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- CloudMusic --&gt;</span></span><br><span class="line">&#123; % if page.music-id % &#125;    <span class="comment">&lt;!-- 不知道什么bug得加个空格才显示，“&#123; %”之间的空格需要删除 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">frameborder</span>=<span class="string">&quot;no&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> <span class="attr">marginwidth</span>=<span class="string">&quot;0&quot;</span> <span class="attr">marginheight</span>=<span class="string">&quot;0&quot;</span> <span class="attr">width</span>=<span class="string">330</span> <span class="attr">height</span>=<span class="string">86</span></span></span><br><span class="line"><span class="tag"><span class="attr">src</span>=<span class="string">&quot;//music.163.com/outchain/player?type=2&amp;id=&#123; &#123; page.music-id &#125; &#125;&amp;auto=1&amp;height=66&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line">&#123; % endif % &#125;    <span class="comment">&lt;!-- “&#123; %”之间的空格需要删除 --&gt;</span></span><br></pre></td></tr></table></figure>
+<p>此外，外链中的<code>auto=1</code>可以控制自动播放与否，当值为<code>1</code>即打开网页就自动播放，值为<code>0</code> 时需要访客手动点击播放。同时在每一篇post的参数栏中指定<code>music-id</code>，这样当<code>music-id:</code> 参数为空时，播放器就会关闭（不加载）。</p>
+
+    </div>
+    <div>
+      
+      <div>
+    
+        <div style="text-align:center;color: #5F9EA0;font-size:14px;">------The End------</div>
+    
+</div>
+      
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Markdown/" rel="tag"><i class="fa fa-tag"></i> Markdown</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/16/2020-4-20-VimManual/" rel="prev" title="Vim文本编辑器的使用">
+      <i class="fa fa-chevron-left"></i> Vim文本编辑器的使用
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/20/2020-4-20-LaTexBugFixed/" rel="next" title="Latex常见问题及解决方案">
+      Latex常见问题及解决方案 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          المحتويات
+        </li>
+        <li class="sidebar-nav-overview">
+          عام
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BC%98%E7%A7%80%E6%A1%88%E4%BE%8B%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">Hexo搭建博客优秀案例学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mac-Github%E9%85%8D%E7%BD%AE"><span class="nav-number">1.1.</span> <span class="nav-text">Mac Github配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Git"><span class="nav-number">1.1.1.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAssh-key%E3%80%81%E9%85%8D%E7%BD%AEgit"><span class="nav-number">1.1.2.</span> <span class="nav-text">创建ssh key、配置git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E5%88%B0-Github"><span class="nav-number">1.1.3.</span> <span class="nav-text">提交本地项目到 Github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac%E5%AE%89%E8%A3%85Hexo%E7%9A%84%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.4.</span> <span class="nav-text">Mac安装Hexo的失败问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo%E4%B8%8ENode-js%E7%89%88%E6%9C%AC%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.5.</span> <span class="nav-text">Hexo与Node.js版本兼容问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-Next%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96"><span class="nav-number">1.2.</span> <span class="nav-text">Hexo-Next主题美化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-Next%E4%B8%BB%E9%A2%98%E4%B8%AD%E7%9A%84%E5%86%85%E7%BD%AE%E6%A0%87%E7%AD%BE%E4%BD%BF%E7%94%A8%E7%9A%84%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3"><span class="nav-number">1.3.</span> <span class="nav-text">Hexo+Next主题中的内置标签使用的官方文档</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Markdown-Syntax"><span class="nav-number">2.</span> <span class="nav-text">Markdown Syntax</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE%EF%BC%9A%E6%96%9C%E4%BD%93%E3%80%81%E7%B2%97%E4%BD%93%E3%80%81%E5%88%A0%E9%99%A4%E7%BA%BF%E3%80%81%E4%B8%8B%E5%88%92%E7%BA%BF"><span class="nav-number">2.1.</span> <span class="nav-text">字体设置：斜体、粗体、删除线、下划线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A9%E7%94%A8iPic%E6%8F%92%E5%85%A5%E4%BA%92%E8%81%94%E7%BD%91%E5%9B%BE%E7%89%87%E3%80%81%E5%88%86%E5%89%B2%E7%BA%BF%E4%B8%8E%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-number">2.2.</span> <span class="nav-text">利用iPic插入互联网图片、分割线与代码块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E3%80%81%E5%AD%97%E5%8F%B7%E4%B8%8E%E9%A2%9C%E8%89%B2"><span class="nav-number">2.3.</span> <span class="nav-text">字体、字号与颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%BC%96%E5%8F%B7"><span class="nav-number">2.4.</span> <span class="nav-text">数学公式编号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown%E7%BB%98%E5%9B%BE%E6%8F%92%E4%BB%B6Mermaid%E8%AF%AD%E6%B3%95"><span class="nav-number">2.5.</span> <span class="nav-text">Markdown绘图插件Mermaid语法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Jekyll-Grammer"><span class="nav-number">3.</span> <span class="nav-text">Jekyll Grammer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6"><span class="nav-number">3.1.</span> <span class="nav-text">为博客页面添加音乐插件</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Yolili"
+      src="/images/avatar.jpeg">
+  <p class="site-author-name" itemprop="name">Yolili</p>
+  <div class="site-description" itemprop="description">桥上的人来来往往。但是毫无疑问，许多人走到桥中间的时候，心会小幅度摇摆。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">المقالات</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">التصنيفات</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">الوسوم</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/eleanorchienqr" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eleanorchienqr" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:eleanor_chien@foxmail.com" title="E-Mail → mailto:eleanor_chien@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/Yoooooooolili" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;Yoooooooolili" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Yoooooolili" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Yoooooolili" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yolili</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">مُجمل عدد الحروف: </span>
+    <span title="مُجمل عدد الحروف">65k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">مُجمل زمن القراءة &asymp;</span>
+    <span title="مُجمل زمن القراءة">59 دقائق.</span>
+</div>
+
+
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="إجمالي الزوار">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="إجمالي المشاهدات">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'qJwfDCE0pq6GGdIShKCb4OGM-gzGzoHsz',
+      appKey     : 'UhGWJ7IkQwiAtUuCXU8ij5Sg',
+      placeholder: "留个言吧～",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

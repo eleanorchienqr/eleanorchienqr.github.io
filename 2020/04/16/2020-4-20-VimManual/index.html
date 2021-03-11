@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Sans SC:300,300italic,400,400italic,700,700italic|Josefin Sans:300,300italic,400,400italic,700,700italic|Monda:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"eleanorchienqr.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":280,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="本篇文章汇总了MacOS系统下vim编辑器的使用教程，并按照初级到进阶的使用过程进行排序。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vim文本编辑器的使用">
+<meta property="og:url" content="https://eleanorchienqr.github.io/2020/04/16/2020-4-20-VimManual/index.html">
+<meta property="og:site_name" content="Live &amp; Love">
+<meta property="og:description" content="本篇文章汇总了MacOS系统下vim编辑器的使用教程，并按照初级到进阶的使用过程进行排序。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gfagn578xtg30sg0k4dhu.gif">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gfagnup2b7g30sg0k4di0.gif">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gfagoh8uh6g30sg0k475y.gif">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gfagou6223g30sg0k4gnd.gif">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gfagp34abzg30sg0k4jt2.gif">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gfagpauavgg30sg0k4aby.gif">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gfagphu9npg30sg0k4ac9.gif">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gfagrdmwdtg30sg0k4ad3.gif">
+<meta property="article:published_time" content="2020-04-16T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-11T10:59:07.148Z">
+<meta property="article:author" content="Yolili">
+<meta property="article:tag" content="Vim">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gfagn578xtg30sg0k4dhu.gif">
+
+<link rel="canonical" href="https://eleanorchienqr.github.io/2020/04/16/2020-4-20-VimManual/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en-US'
+  };
+</script>
+
+  <title>Vim文本编辑器的使用 | Live & Love</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Live & Love" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="تشغيل شريط التصفح">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Live & Love</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>معلومات</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>الوسوم</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>التصنيفات</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>الأرشيفات</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>بحث
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="بحث..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en-US">
+    <link itemprop="mainEntityOfPage" href="https://eleanorchienqr.github.io/2020/04/16/2020-4-20-VimManual/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Yolili">
+      <meta itemprop="description" content="桥上的人来来往往。但是毫无疑问，许多人走到桥中间的时候，心会小幅度摇摆。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Live & Love">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Vim文本编辑器的使用
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">نُشر في</span>
+
+              <time title="أُنشأ: 2020-04-16 00:00:00" itemprop="dateCreated datePublished" datetime="2020-04-16T00:00:00Z">2020-04-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">عُدل في</span>
+                <time title="عُدل: 2021-03-11 10:59:07" itemprop="dateModified" datetime="2021-03-11T10:59:07Z">2021-03-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">في</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer/" itemprop="url" rel="index"><span itemprop="name">Computer</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="مشاهدات" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">مشاهدات: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/04/16/2020-4-20-VimManual/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/16/2020-4-20-VimManual/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="عدد الحروف في المقال">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">عدد الحروف في المقال: </span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="زمن القراءة">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">زمن القراءة &asymp;</span>
+              <span>1 دقائق.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本篇文章汇总了MacOS系统下vim编辑器的使用教程，并按照初级到进阶的使用过程进行排序。<br><span id="more"></span></p>
+<h1 id="初级入门教程"><a href="#初级入门教程" class="headerlink" title="初级入门教程"></a>初级入门教程</h1><h2 id="精选Vim教程"><a href="#精选Vim教程" class="headerlink" title="精选Vim教程"></a>精选Vim教程</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://coolshell.cn/articles/5426.html">简明VIM练级攻略</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/yangyangwithgnu/use_vim_as_ide#8.4">所需即所获：像IDE一样使用vim</a></li>
+</ul>
+<h2 id="Vim界面美化"><a href="#Vim界面美化" class="headerlink" title="Vim界面美化"></a>Vim界面美化</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000015143474">Vim的NerdTree插件</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/humiaozuzu/dot-vimrc">VIM配置样式dot-vimrc</a></li>
+</ul>
+<h2 id="Vim-Latex配置"><a href="#Vim-Latex配置" class="headerlink" title="Vim+Latex配置"></a>Vim+Latex配置</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ddd825064062">Vim Latex 的使用和配置技巧 (一)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/c0a4bca43df8">Vim Latex 的使用和配置技巧 (二)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d50ac36a56cf">Vim Latex 的使用和配置技巧 (三)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/9485841ffd66">Vim Latex 的使用和配置技巧 (四): 用 snippet 编辑 latex 文档</a></li>
+</ul>
+<h2 id="Vim-Python配置"><a href="#Vim-Python配置" class="headerlink" title="Vim+Python配置"></a>Vim+Python配置</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://vimjc.com/vim-python-ide.html">如何将Vim配置成适用于Python开发的IDE环境</a></li>
+<li><a target="_blank" rel="noopener" href="https://vimjc.com/vim-ctrlp-plugin.html">Vim插件推荐—模糊搜索插件ctrlp使用方法</a></li>
+</ul>
+<h2 id="Vim快捷键"><a href="#Vim快捷键" class="headerlink" title="Vim快捷键"></a>Vim快捷键</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u011365893/article/details/17139361">最全的vim快捷键</a></li>
+<li><a target="_blank" rel="noopener" href="http://cenalulu.github.io/linux/all-vim-cheatsheat/">史上最全Vim快捷键键位图 — 入门到进阶</a></li>
+</ul>
+<h3 id="经典版（Classic）"><a href="#经典版（Classic）" class="headerlink" title="经典版（Classic）"></a>经典版（Classic）</h3><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gfagn578xtg30sg0k4dhu.gif" alt=""><br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gfagnup2b7g30sg0k4di0.gif" alt=""><br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gfagoh8uh6g30sg0k475y.gif" alt=""><br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gfagou6223g30sg0k4gnd.gif" alt=""><br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gfagp34abzg30sg0k4jt2.gif" alt=""><br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gfagpauavgg30sg0k4aby.gif" alt=""><br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gfagphu9npg30sg0k4ac9.gif" alt=""></p>
+<p><strong>完整版</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gfagrdmwdtg30sg0k4ad3.gif" alt=""></p>
+<h1 id="Vim插件使用"><a href="#Vim插件使用" class="headerlink" title="Vim插件使用"></a>Vim插件使用</h1><h2 id="NERDTree"><a href="#NERDTree" class="headerlink" title="NERDTree"></a>NERDTree</h2><p><strong>切换工作台和目录</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ctrl + w + h    光标 focus 左侧树形目录</span><br><span class="line">ctrl f w + l    光标 focus 右侧文件显示窗口</span><br><span class="line">ctrl + w + w    光标自动在左右侧窗口切换</span><br><span class="line">ctrl + w + r    移动当前窗口的布局位置</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">o       在已有窗口中打开文件、目录或书签，并跳到该窗口</span><br><span class="line">go      在已有窗口 中打开文件、目录或书签，但不跳到该窗口</span><br><span class="line">t       在新 Tab 中打开选中文件&#x2F;书签，并跳到新 Tab</span><br><span class="line">T       在新 Tab 中打开选中文件&#x2F;书签，但不跳到新 Tab</span><br><span class="line">i       split 一个新窗口打开选中文件，并跳到该窗口</span><br><span class="line">gi      split 一个新窗口打开选中文件，但不跳到该窗口</span><br><span class="line">s       vsplit 一个新窗口打开选中文件，并跳到该窗口</span><br><span class="line">gs      vsplit 一个新 窗口打开选中文件，但不跳到该窗口</span><br><span class="line">!       执行当前文件</span><br><span class="line">O       递归打开选中 结点下的所有目录</span><br><span class="line">x       合拢选中结点的父目录</span><br><span class="line">X       递归 合拢选中结点下的所有目录</span><br><span class="line">e       Edit the current dif</span><br><span class="line"></span><br><span class="line">双击    相当于 NERDTree-o</span><br><span class="line">中键    对文件相当于 NERDTree-i，对目录相当于 NERDTree-e</span><br><span class="line"></span><br><span class="line">D       删除当前书签</span><br><span class="line"></span><br><span class="line">P       跳到根结点</span><br><span class="line">p       跳到父结点</span><br><span class="line">K       跳到当前目录下同级的第一个结点</span><br><span class="line">J       跳到当前目录下同级的最后一个结点</span><br><span class="line">k       跳到当前目录下同级的前一个结点</span><br><span class="line">j       跳到当前目录下同级的后一个结点</span><br><span class="line"></span><br><span class="line">C       将选中目录或选中文件的父目录设为根结点</span><br><span class="line">u       将当前根结点的父目录设为根目录，并变成合拢原根结点</span><br><span class="line">U       将当前根结点的父目录设为根目录，但保持展开原根结点</span><br><span class="line">r       递归刷新选中目录</span><br><span class="line">R       递归刷新根结点</span><br><span class="line">m       显示文件系统菜单</span><br><span class="line">cd      将 CWD 设为选中目录</span><br><span class="line"></span><br><span class="line">I       切换是否显示隐藏文件</span><br><span class="line">f       切换是否使用文件过滤器</span><br><span class="line">F       切换是否显示文件</span><br><span class="line">B       切换是否显示书签</span><br><span class="line"></span><br><span class="line">q       关闭 NerdTree 窗口</span><br><span class="line">?       切换是否显示 Quick Help</span><br></pre></td></tr></table></figure>
+<p><strong>切换标签页</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">:tabnew [++opt选项] ［＋cmd］ 文件      建立对指定文件新的tab</span><br><span class="line">:tabc   关闭当前的 tab</span><br><span class="line">:tabo   关闭所有其他的 tab</span><br><span class="line">:tabs   查看所有打开的 tab</span><br><span class="line">:tabp   前一个 tab</span><br><span class="line">:tabn   后一个 tab</span><br><span class="line"></span><br><span class="line">标准模式下：</span><br><span class="line">gT      前一个 tab</span><br><span class="line">gt      后一个 tab</span><br><span class="line"></span><br><span class="line">MacVim 还可以借助快捷键来完成 tab 的关闭、切换</span><br><span class="line">cmd+w   关闭当前的 tab</span><br><span class="line">cmd+&#123;   前一个 tab</span><br><span class="line">cmd+&#125;   后一个 tab</span><br></pre></td></tr></table></figure>
+<p><strong>NerdTree 在 .vimrc 中的常用配置</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&quot; 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）</span><br><span class="line">autocmd VimEnter * NERDTree</span><br><span class="line"></span><br><span class="line">&quot; 按下 F2 调出&#x2F;隐藏 NERDTree</span><br><span class="line">map  :silent! NERDTreeToggle</span><br><span class="line"></span><br><span class="line">&quot; 将 NERDTree 的窗口设置在 vim 窗口的右侧（默认为左侧）</span><br><span class="line">let NERDTreeWinPos&#x3D;&quot;right&quot;</span><br><span class="line"></span><br><span class="line">&quot; 当打开 NERDTree 窗口时，自动显示 Bookmarks</span><br><span class="line">let NERDTreeShowBookmarks&#x3D;1</span><br></pre></td></tr></table></figure>
+
+    </div>
+    <div>
+      
+      <div>
+    
+        <div style="text-align:center;color: #5F9EA0;font-size:14px;">------The End------</div>
+    
+</div>
+      
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Vim/" rel="tag"><i class="fa fa-tag"></i> Vim</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/10/11/2019-10-13-ScienceAboutDevil/" rel="prev" title="《恶的科学：论共情与残酷行为的起源》">
+      <i class="fa fa-chevron-left"></i> 《恶的科学：论共情与残酷行为的起源》
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/18/2020-4-20-MarkdownGrammer/" rel="next" title="博客搭建及Markdown语法">
+      博客搭建及Markdown语法 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          المحتويات
+        </li>
+        <li class="sidebar-nav-overview">
+          عام
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">初级入门教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B2%BE%E9%80%89Vim%E6%95%99%E7%A8%8B"><span class="nav-number">1.1.</span> <span class="nav-text">精选Vim教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim%E7%95%8C%E9%9D%A2%E7%BE%8E%E5%8C%96"><span class="nav-number">1.2.</span> <span class="nav-text">Vim界面美化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim-Latex%E9%85%8D%E7%BD%AE"><span class="nav-number">1.3.</span> <span class="nav-text">Vim+Latex配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim-Python%E9%85%8D%E7%BD%AE"><span class="nav-number">1.4.</span> <span class="nav-text">Vim+Python配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">1.5.</span> <span class="nav-text">Vim快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%8F%E5%85%B8%E7%89%88%EF%BC%88Classic%EF%BC%89"><span class="nav-number">1.5.1.</span> <span class="nav-text">经典版（Classic）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vim%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">Vim插件使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NERDTree"><span class="nav-number">2.1.</span> <span class="nav-text">NERDTree</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Yolili"
+      src="/images/avatar.jpeg">
+  <p class="site-author-name" itemprop="name">Yolili</p>
+  <div class="site-description" itemprop="description">桥上的人来来往往。但是毫无疑问，许多人走到桥中间的时候，心会小幅度摇摆。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">المقالات</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">التصنيفات</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">الوسوم</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/eleanorchienqr" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eleanorchienqr" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:eleanor_chien@foxmail.com" title="E-Mail → mailto:eleanor_chien@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/Yoooooooolili" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;Yoooooooolili" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Yoooooolili" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Yoooooolili" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yolili</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">مُجمل عدد الحروف: </span>
+    <span title="مُجمل عدد الحروف">65k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">مُجمل زمن القراءة &asymp;</span>
+    <span title="مُجمل زمن القراءة">59 دقائق.</span>
+</div>
+
+
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="إجمالي الزوار">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="إجمالي المشاهدات">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'qJwfDCE0pq6GGdIShKCb4OGM-gzGzoHsz',
+      appKey     : 'UhGWJ7IkQwiAtUuCXU8ij5Sg',
+      placeholder: "留个言吧～",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

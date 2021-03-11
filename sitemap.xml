@@ -165,20 +165,6 @@
 
   
   <url>
-    <loc>https://eleanorchienqr.github.io/tags/Reading/</loc>
-    <lastmod>2021-03-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://eleanorchienqr.github.io/tags/Psychology/</loc>
-    <lastmod>2021-03-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://eleanorchienqr.github.io/tags/LaTex/</loc>
     <lastmod>2021-03-11</lastmod>
     <changefreq>daily</changefreq>
@@ -228,14 +214,14 @@
   </url>
   
   <url>
-    <loc>https://eleanorchienqr.github.io/tags/Philosophy-of-mind/</loc>
+    <loc>https://eleanorchienqr.github.io/tags/Reading/</loc>
     <lastmod>2021-03-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://eleanorchienqr.github.io/tags/Writing/</loc>
+    <loc>https://eleanorchienqr.github.io/tags/Psychology/</loc>
     <lastmod>2021-03-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -243,13 +229,6 @@
   
   <url>
     <loc>https://eleanorchienqr.github.io/tags/%E5%93%B2%E5%AD%A6%E6%96%87%E7%8C%AE%E4%B8%8E%E5%86%99%E4%BD%9C/</loc>
-    <lastmod>2021-03-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://eleanorchienqr.github.io/tags/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2021-03-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -277,6 +256,13 @@
   </url>
   
   <url>
+    <loc>https://eleanorchienqr.github.io/tags/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2021-03-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://eleanorchienqr.github.io/tags/Classnotes/</loc>
     <lastmod>2021-03-11</lastmod>
     <changefreq>daily</changefreq>
@@ -290,14 +276,21 @@
     <priority>0.6</priority>
   </url>
   
-
-  
   <url>
-    <loc>https://eleanorchienqr.github.io/categories/Psychology/</loc>
+    <loc>https://eleanorchienqr.github.io/tags/Philosophy-of-mind/</loc>
     <lastmod>2021-03-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
+  
+  <url>
+    <loc>https://eleanorchienqr.github.io/tags/Writing/</loc>
+    <lastmod>2021-03-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
   
   <url>
     <loc>https://eleanorchienqr.github.io/categories/Computer/</loc>
@@ -315,6 +308,13 @@
   
   <url>
     <loc>https://eleanorchienqr.github.io/categories/Entertainment/</loc>
+    <lastmod>2021-03-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://eleanorchienqr.github.io/categories/Psychology/</loc>
     <lastmod>2021-03-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

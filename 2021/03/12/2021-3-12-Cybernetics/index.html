@@ -22,17 +22,20 @@
     var CONFIG = {"hostname":"eleanorchienqr.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":280,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="桥上的人来来往往。但是毫无疑问，许多人走到桥中间的时候，心会小幅度摇摆。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Live &amp; Love">
-<meta property="og:url" content="https://eleanorchienqr.github.io/categories/Language/index.html">
+  <meta name="description" content="Fundamental Concepts of Control System: Laplace transform.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021春季学期神经控制理论（一）">
+<meta property="og:url" content="https://eleanorchienqr.github.io/2021/03/12/2021-3-12-Cybernetics/index.html">
 <meta property="og:site_name" content="Live &amp; Love">
-<meta property="og:description" content="桥上的人来来往往。但是毫无疑问，许多人走到桥中间的时候，心会小幅度摇摆。">
+<meta property="og:description" content="Fundamental Concepts of Control System: Laplace transform.">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-12T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-12T04:29:14.746Z">
 <meta property="article:author" content="Yolili">
+<meta property="article:tag" content="Classnote">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://eleanorchienqr.github.io/categories/Language/">
+<link rel="canonical" href="https://eleanorchienqr.github.io/2021/03/12/2021-3-12-Cybernetics/">
 
 
 <script id="page-configurations">
@@ -40,12 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Category: Language | Live & Love</title>
+  <title>2021春季学期神经控制理论（一） | Live & Love</title>
   
 
 
@@ -185,77 +188,162 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://eleanorchienqr.github.io/2021/03/12/2021-3-12-Cybernetics/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Yolili">
+      <meta itemprop="description" content="桥上的人来来往往。但是毫无疑问，许多人走到桥中间的时候，心会小幅度摇摆。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Live & Love">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2021春季学期神经控制理论（一）
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-03-12 00:00:00 / Modified: 04:29:14" itemprop="dateCreated datePublished" datetime="2021-03-12T00:00:00Z">2021-03-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Cybernetics/" itemprop="url" rel="index"><span itemprop="name">Cybernetics</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">Language
-          <small>Category</small>
-        </h2>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2021/03/12/2021-3-12-Cybernetics/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/03/12/2021-3-12-Cybernetics/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-05-08T00:00:00Z"
-              content="2020-05-08">
-          05-08
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/05/08/2020-5-8-EnglishWord/" itemprop="url">
-            <span itemprop="name">英语词汇库扩充计划（一）</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-24T00:00:00Z"
-              content="2020-04-24">
-          04-24
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/04/24/2020-3-28-TheEconomist20200328/" itemprop="url">
-            <span itemprop="name">2020年3月28日《经济学人》文章精读</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+        <p>Fundamental Concepts of Control System: Laplace transform.</p>
+<span id="more"></span>
+<h1 id="laplace-transformation">Laplace transformation</h1>
+<div class="note primary">
+            <p><strong>Date: 2020.3.12, Week 2.</strong></p>
+          </div>
+<p><u><strong>Linearity system</strong></u> : superposition principle（叠加原理）.</p>
+$
+<span class="math display">\[\begin{aligned}
+&amp;F\left(x_{1}+x_{2}\right)=F\left(x_{1}\right)+F\left(x_{2}\right) \quad \text { Additivity }\\
+&amp;F(a x)=a F(x) \quad \quad \quad\quad\quad\quad\quad\text { Homogeneity }\\
+&amp;\text { for scalar } a \text { . }
+\end{aligned}\]</span>
+<p>$</p>
+<p><u><strong>Sufficient conditions for existence of the laplace transformation.</strong></u> * <span class="math inline">\(f(t)\)</span> is a piecewise continuous function; * <span class="math inline">\(f(t)\)</span> is bounded ny an exponential functions.</p>
+<p><u><strong>Rational function</strong></u></p>
+<p><u><strong>Initial values &amp; final values of laplacian transform properties.</strong></u> * Final value thereom: Suppose that every pole of <span class="math inline">\(F(s)\)</span> is either in the open left half plane or at the origin, and that <span class="math inline">\(F(s)\)</span> has at most a single pole at the origin. Then <span class="math inline">\(s F(s) \rightarrow L \in \mathbb{R}\)</span> as <span class="math inline">\(s \rightarrow 0\)</span>, and <span class="math inline">\(\lim _{t \rightarrow \infty} f(t)=L\)</span>. *Initial value theorem: If <span class="math inline">\(f\)</span> is bounded on <span class="math inline">\((0, \infty)\)</span> (or if just <span class="math inline">\(f(t)=O\left(e^{c t}\right)\)</span> ) and <span class="math inline">\(\lim _{t \rightarrow 0^{+}} f(t)\)</span> exists then the initial value theorem says <span class="math display">\[
+\lim _{t \rightarrow 0} f(t)=\lim _{s \rightarrow \infty} s F(s)
+\]</span></p>
+<p><u><strong>Transfer function</strong></u> : the ratio of laplace transform of the output over the laplace transform of the input in linear control system. * Static system, represented by block diagram with constant gain. * Linear time-invariant dynamic systems, represented by a transfer function.</p>
+<p><u><strong>Pole-zero plot</strong></u></p>
 
     </div>
-  </div>
-  
-  
-  
+    <div>
+      
+      <div>
+    
+        <div style="text-align:center;color: #5F9EA0;font-size:14px;">------The End------</div>
+    
+</div>
+      
+    </div>
 
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Classnote/" rel="tag"><i class="fa fa-tag"></i> Classnote</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/03/11/2021-3-11-ThatIDidWithoutYou/" rel="prev" title="未与你共度的一切 | All This I Did Without You (extract)">
+      <i class="fa fa-chevron-left"></i> 未与你共度的一切 | All This I Did Without You (extract)
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -302,6 +390,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#laplace-transformation"><span class="nav-number">1.</span> <span class="nav-text">Laplace transformation</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
